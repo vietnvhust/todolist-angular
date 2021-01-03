@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="text-center">
+    <h1>Quản Lý Công Việc</h1>
+    <hr/>
+  </div>
+  <div class="row">
+    <ng-container *ngIf="toggle">
+      <app-todo-form [todoEdit]="todoEdit" (toggleFalse)="onCloseForm($event)" (addTodo)="onAddForm($event)"></app-todo-form>
+    </ng-container>
+    <div [ngClass]="toggle===false?'col-xs-12':'col-xs-8'">
+      <button type="button" class="btn btn-primary" (click)="onToggleForm()">
+        <span class="fa fa-plus mr-5"></span>Thêm Công Việc
+      </button>
+      <app-todo-filter (title)="onSearchTitle($event)" (sort)="onSort($event)"></app-todo-filter>
+      <app-todo-list (statusChange)="onChangeStatus($event)" (title)="onSearchTitle($event)" (status)="onSortStatus($event)" (toggleTrue)="onOpenForm($event)"  [todos]="todos" (idDelete)="onDelete($event)" (idEdit)="onEdit($event)"></app-todo-list>
+    </div>
+  </div>
+</div>

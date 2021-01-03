@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+.mr-5 {
+  margin-right: 5px;
+}
+.mt-15 {
+  margin-top: 15px;
+}
+.container .table > thead > tr > th,
+.container .table > tbody > tr > th,
+.container .table > tfoot > tr > th,
+.container .table > thead > tr > td,
+.container .table > tbody > tr > td,
+.container .table > tfoot > tr > td {
+  vertical-align: middle;
+}
